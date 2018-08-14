@@ -1,6 +1,6 @@
 # vibespot
 
-A new Flutter project.
+A music application to promote local artists in Nigeria to the world
 
 ## Getting Started
 
