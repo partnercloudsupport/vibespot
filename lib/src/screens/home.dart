@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget{
-  HomeState createState()=> HomeState();
-
-
+  HomeState createState()=>  HomeState();
 }
 
-class HomeState extends State<Home>{
-  Widget build(context){
+class HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('VibeSpot'),
+        title: Text("VibeSpot"),
       ),
-
+      body: buildAnimation(),
     );
-
   }
 
+  Widget buildAnimation(){
+
+    
+  } 
 }
