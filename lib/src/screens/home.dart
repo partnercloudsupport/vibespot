@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -5,7 +6,23 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
+  
+   startTime() async {
+    var duration = new Duration(seconds: 5);
+    return new Timer(duration, navigationPage);
+  }
+
+  void navigationPage() {
+    Navigator.of(context).pushReplacementNamed('/HomeScreen');
+  }
+
   @override
+  void initState() {
+    super.initState();
+    startTime();
+  }
+
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: new Stack(
