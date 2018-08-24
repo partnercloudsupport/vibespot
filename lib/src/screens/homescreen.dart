@@ -8,13 +8,23 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('HomeScreen'),
-      ),
-      body: new Center(
-        child: new Text('Welcome to Home.!'),
-      ),
+    return Scaffold(
+      body: new Stack(
+        children: <Widget>[
+        new Container(
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+              image: new AssetImage('assets/images/splash-background.png'),
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
+      ],
+    )
     );
   }
+
+  // Widget buildAnimation(){
+
+  // }
 }
