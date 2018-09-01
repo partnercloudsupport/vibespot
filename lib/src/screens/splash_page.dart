@@ -1,19 +1,21 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  HomeState createState() => HomeState();
+class SplashPage extends StatefulWidget {
+  static String tag = 'splash-page';
+  SplashPageState createState() => SplashPageState();
 }
 
-class HomeState extends State<Home> {
+class SplashPageState extends State<SplashPage> {
   
    startTime() async {
     var duration = new Duration(seconds: 5);
     return new Timer(duration, navigationPage);
   }
-
+  
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed('/HomeScreen');
+    // Navigator.of(context).pushReplacementNamed('/HomeScreen');
+    Navigator.of(context).pushReplacementNamed("/HomePage");
   }
 
   @override
@@ -36,7 +38,7 @@ class HomeState extends State<Home> {
           ),
         ),
       ],
-    )
+    ),
     );
   }
 
