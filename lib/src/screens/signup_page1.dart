@@ -1,4 +1,4 @@
-// import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class SignUpPage1 extends StatefulWidget {
@@ -9,22 +9,22 @@ class SignUpPage1 extends StatefulWidget {
 
 class SignUpPage1State extends State<SignUpPage1> {
 
-  // startTime() async {
-  //   var duration = new Duration(seconds: 5);
-  //   return new Timer(duration, navigationPage);
-  // }
+  startTime() async {
+    var duration = new Duration(seconds: 5);
+    return new Timer(duration, navigationPage);
+  }
   
-  // void navigationPage() {
-  //   Navigator.of(context).pushReplacementNamed("/signUpHome");
-  // }
+  void navigationPage() {
+    Navigator.of(context).pushReplacementNamed("/SignUpPage2");
+  }
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   startTime();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    startTime();
+  }
 
-   final welcomeBackSignup = new Center(
+  final welcomeBackSignup = new Center(
           child: new Text("Welcome",
           style: new TextStyle(
             color: Colors.orange.shade700,
@@ -39,7 +39,7 @@ class SignUpPage1State extends State<SignUpPage1> {
   final welcomeTag = new Center(
           child: new Text("Please tell us your email address",
           style: new TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontFamily: 'Poppins',
             fontSize: 20.0,
           ),
@@ -48,12 +48,14 @@ class SignUpPage1State extends State<SignUpPage1> {
         );  
 
 
-    final emailSignup = TextField(
+  final emailSignup = TextField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
       // initialValue: 'john@gmail.com',
       decoration: InputDecoration(
         hintText: 'Email',
+        filled: true,
+        fillColor: Colors.white,
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0),
@@ -68,23 +70,23 @@ class SignUpPage1State extends State<SignUpPage1> {
       
     );
 
-  final checkButton = new Center(
-          child: new Text("Yes, I’d like to recieve news and other interesting communications form Vibespot",
-          style: new TextStyle(
-            color: Colors.black,
-            fontFamily: 'Poppins',
-            fontSize: 20.0,
-          ),
-          textAlign: TextAlign.center,
-          ),   
-        );  
+  // final checkButton = new Center(
+  //         child: new Text("Yes, I’d like to recieve news and other interesting communications form Vibespot",
+  //         style: new TextStyle(
+  //           color: Colors.black,
+  //           fontFamily: 'Poppins',
+  //           fontSize: 20.0,
+  //         ),
+  //         textAlign: TextAlign.center,
+  //         ),   
+  //       );  
 
    final checkButtonText = new Center(
           child: new Text("Yes, I’d like to recieve news and other interesting communications form Vibespot",
           style: new TextStyle(
-            color: Colors.black,
-            fontFamily: 'Poppins',
-            fontSize: 20.0,
+            color: Colors.white,
+            fontFamily: 'Poppins-Light',
+            fontSize: 15.0,
           ),
           textAlign: TextAlign.center,
           ),   
@@ -101,7 +103,6 @@ class SignUpPage1State extends State<SignUpPage1> {
               minWidth: 200.0,
               height: 60.0,
               onPressed: (){
-                
               } ,
               color: Colors.orange.shade700,
               child: Text(
@@ -120,10 +121,12 @@ class SignUpPage1State extends State<SignUpPage1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sign In", style: TextStyle(color:Colors.orange.shade700)),
+        centerTitle: true,
+        leading: Icon(Icons.arrow_back, color: Colors.orange.shade700),
+        title: Text("Create acount", style: TextStyle(color:Colors.orange.shade700)),
         backgroundColor: Colors.black,
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black45,
       body: Center(
         child: ListView(
           shrinkWrap: true,
@@ -135,6 +138,7 @@ class SignUpPage1State extends State<SignUpPage1> {
               SizedBox(height: 20.0),
               emailSignup,
               SizedBox(height: 15.0),
+              checkBtn,
               checkButtonText,
               SizedBox(height: 15.0),
               nextButton,

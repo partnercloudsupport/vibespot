@@ -87,12 +87,36 @@ class signUpHomeState extends State<signUpHome> {
           ),   
         );   
 
-
+    //  final termsConditionsa = RichText(
+    //           softWrap: true,
+    //           text: TextSpan(
+    //           text: ,
+    //           style: TextStyle(
+    //             color: Colors.white,
+    //             fontFamily: 'Poppins',
+    //             fontSize: 15.0,
+              
+    //           ),
+    //           ),
+    //  );
+                
+    //           TextAlign: TextAlign.center,
+    //           children: [
+    //             TextSpan(text: "By creating an account I agree to",  )
+    //             TextSpan(text: "Terms & Conditions, Privacy Policy," )
+    //             TextSpan(text: "and",)
+    //             TextSpan(text: "Distribution Agreement;.",)
+    //           ]
+    //         ),
+    //       ),   
+    //     );   
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        leading: Icon(Icons.arrow_back, color: Colors.orange.shade700),
         title: Text("Create Account", style: TextStyle(color:Colors.orange.shade700)),
         backgroundColor: Colors.black,
       ),

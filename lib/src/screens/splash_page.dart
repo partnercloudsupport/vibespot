@@ -13,10 +13,12 @@ class SplashPageState extends State<SplashPage> {
     return new Timer(duration, navigationPage);
   }
   
+
   void navigationPage() {
     // Navigator.of(context).pushReplacementNamed('/HomeScreen');
     Navigator.of(context).pushReplacementNamed("/HomePage");
   }
+
 
   @override
   void initState() {
@@ -24,10 +26,12 @@ class SplashPageState extends State<SplashPage> {
     startTime();
   }
 
+
  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: new Stack(
+        fit: StackFit.expand,
         children: <Widget>[
         new Container(
           decoration: new BoxDecoration(
@@ -41,8 +45,6 @@ class SplashPageState extends State<SplashPage> {
     ),
     );
   }
-
   // Widget buildAnimation(){
-
   // }
 }

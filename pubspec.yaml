@@ -8,6 +8,12 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  # material_design_icons_flutter: ^2.7.94
+  # community_material_icon: ^0.1.2
+  groovin_material_icons: ^1.0.5
+
+  sqflite: 0.11.2+2
+  path_provider: ^0.4.1
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +45,14 @@ flutter:
    - assets/images/email-icon.png
    - assets/images/facebook-white-logo.png
    - assets/images/google-white-logo.png
+   - assets/images/mySpot-selected-icon.png
+   - assets/images/vibeStream-selected-icon.png
+   - assets/images/vibespot-appicon2x.png
+   - assets/images/no-data-image.png
+   - assets/images/shopping-cart-icon.png
+   - assets/images/shape2-icon.png
+   - assets/images/add-plus-icon.png
+   - assets/images/myAccount-selected-icon.png
 
    
 
@@ -59,6 +73,15 @@ flutter:
         - asset: assets/fonts/Poppins-Italic.ttf
         - asset: assets/fonts/Poppins-Bold.ttf
         - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Black.ttf
+        - asset: assets/fonts/Poppins-BlackItalic.ttf
+        - asset: assets/fonts/Poppins-BoldItalic.ttf
+        - asset: assets/fonts/Poppins-Light.ttf
+        - asset: assets/fonts/Poppins-LightItalic.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+        - asset: assets/fonts/Poppins-Thin.ttf
+        - asset: assets/fonts/Poppins-SemiBold.ttf
           style: italic
 
     # - family: Trajan Pro

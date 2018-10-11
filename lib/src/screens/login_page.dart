@@ -38,10 +38,13 @@ class LogInPageState extends State<LogInPage> {
     final email = TextField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
+      
       // initialValue: 'john@gmail.com',
       decoration: InputDecoration(
         hintText: 'Email',
+        filled: true,
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        fillColor: Colors.white,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0),
         ),
@@ -56,6 +59,8 @@ class LogInPageState extends State<LogInPage> {
       decoration: InputDecoration(
         hintText: 'Password',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        fillColor: Colors.white,
+        filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0),
         ),
@@ -88,7 +93,7 @@ class LogInPageState extends State<LogInPage> {
     ); 
 
   final forgetButton = FlatButton(
-    child: Text('Forget password', style: TextStyle(color:Colors.black),
+    child: Text('Forget password?', style: TextStyle(color:Colors.white),
     ),
     onPressed: (){
 
@@ -124,18 +129,19 @@ class LogInPageState extends State<LogInPage> {
       ),
     );
 
+    
+    final signInBar = AppBar(
+        centerTitle: true,
+        leading: Icon(Icons.arrow_back, color: Colors.orange.shade700),
+        title: Text("Sign In", style: TextStyle(color:Colors.orange.shade700)),
+        backgroundColor: Colors.black,
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sign In", style: TextStyle(color:Colors.orange.shade700)),
-        backgroundColor: Colors.black,
-        // child:new Icon(
-        //   icon: 
-
-        // ),
-      ),
-      backgroundColor: Colors.white,
+      appBar: signInBar,
+      backgroundColor: Colors.black,
       body: Center(
         child: ListView(
           shrinkWrap: true,
