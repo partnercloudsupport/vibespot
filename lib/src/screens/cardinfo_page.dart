@@ -1,36 +1,36 @@
-import 'dart:async';
+// import 'dart:async';
 import 'package:flutter/material.dart';
 
-class PaymentPage extends StatefulWidget {
+class CardInformationPage extends StatefulWidget {
   // static String tag = 'transfer-page';
   @override
- PaymentPageState createState() => PaymentPageState();
+ CardInformationPageState createState() => CardInformationPageState();
 }
 
-class PaymentPageState extends State<PaymentPage> {
+class CardInformationPageState extends State<CardInformationPage> {
 
 
 
-  startTime() async {
-    var duration = new Duration(seconds: 5);
-    return new Timer(duration, navigationPage);
-  }
+  // startTime() async {
+  //   var duration = new Duration(seconds: 5);
+  //   return new Timer(duration, navigationPage);
+  // }
   
-  void navigationPage() {
-    Navigator.of(context).pushReplacementNamed("/TopUpPage");
-  }
+  // void navigationPage() {
+  //   Navigator.of(context).pushReplacementNamed("/HelpPage");
+  // }
 
-  @override
-  void initState() {
-    super.initState();
-    startTime();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   startTime();
+  // }
 
- final rechargeBar = AppBar(
+ final cardInfoBar = AppBar(
        centerTitle: true,
         leading: Icon(Icons.arrow_back, size: 30.0, color: Colors.orange.shade700),
-        title: Text("Recharge", style: TextStyle(color:Colors.orange.shade700, 
-        fontFamily: "Poppins", fontSize: 30.0), 
+        title: Text("Add Card", style: TextStyle(color:Colors.orange.shade700, 
+        fontFamily: "Poppins", fontSize: 25.0), 
         textAlign: TextAlign.center,),
         actions: <Widget>[
           IconButton(
@@ -49,10 +49,10 @@ class PaymentPageState extends State<PaymentPage> {
 
 
 
-   final paymentHead = new Padding(
+   final cardHead = new Padding(
     padding: EdgeInsets.only(left: 5.0, right: 5.0),
     child: new Text(
-      "Select Payment Method",
+      "Enter Card Information",
       style: new TextStyle(
         color: Colors.white,
         fontFamily: 'Poppins-Bold',
@@ -63,11 +63,11 @@ class PaymentPageState extends State<PaymentPage> {
   );
 
 
-  final creditCardField = TextField(
+  final cardNumberField = TextField(
       keyboardType: TextInputType.text,
       autofocus: false,
       decoration: InputDecoration(
-        hintText: 'Credit Card',
+        hintText: 'Card number',
         filled: true,
         fillColor: Colors.white,
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -79,28 +79,27 @@ class PaymentPageState extends State<PaymentPage> {
 
 
 
-    //  Widget creditCardField1 = DropdownButton(
-    //    items: listDrop,
-    //    onChanged: null,
-      
-    //   decoration: InputDecoration(
-    //     hintText: 'Credit Card',
-    //     filled: true,
-    //     fillColor: Colors.white,
-    //     contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-    //     border: OutlineInputBorder(
-    //       borderRadius: BorderRadius.circular(40.0),
-    //     ),
-    //   ),
-    // );
-
-
-     final bankField = TextField(
-      keyboardType: TextInputType.text,
+     final expireField = TextField(
+      keyboardType: TextInputType.datetime,
       autofocus: false,
       // initialValue: 'john@gmail.com',
       decoration: InputDecoration(
-        hintText: 'Bank Account',
+        hintText: 'Expiry Date',
+        filled: true,
+        fillColor: Colors.white,
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(40.0),
+        ),
+      ),
+    );
+
+    final cvvField = TextField(
+      keyboardType: TextInputType.number,
+      autofocus: false,
+      // initialValue: 'john@gmail.com',
+      decoration: InputDecoration(
+        hintText: 'CVV',
         filled: true,
         fillColor: Colors.white,
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -139,21 +138,22 @@ class PaymentPageState extends State<PaymentPage> {
 
   @override
    Widget build(BuildContext context){
-    //  loadData();
      return Scaffold(
       
-      appBar: rechargeBar,
+      appBar: cardInfoBar,
       backgroundColor: Colors.black,
       body: Center(
         child: ListView(
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
               SizedBox(height: 50.0),
-              paymentHead,
+              cardHead,
               SizedBox(height: 30.0),
-              creditCardField,
+              cardNumberField,
               SizedBox(height: 15.0),
-              bankField,
+              expireField,
+              SizedBox(height: 15.0),
+              cvvField,
               SizedBox(height: 30.0),
               proceedButton
           

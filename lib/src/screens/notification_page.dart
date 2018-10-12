@@ -1,4 +1,4 @@
-// import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -9,20 +9,20 @@ class NotificationPage extends StatefulWidget {
 
 class NotificationPageState extends State<NotificationPage> {
 
-  // startTime() async {
-  //   var duration = new Duration(seconds: 5);
-  //   return new Timer(duration, navigationPage);
-  // }
-  
-  // void navigationPage() {
-  //   Navigator.of(context).pushReplacementNamed("/QrPage");
-  // }
+      startTime() async {
+        var duration = new Duration(seconds: 5);
+        return new Timer(duration, navigationPage);
+      }
+      
+      void navigationPage() {
+        Navigator.of(context).pushReplacementNamed("/PaymentPage");
+      }
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   startTime();
-  // }
+      @override
+      void initState() {
+        super.initState();
+        startTime();
+      }
 
  final notificationBar = AppBar(
        centerTitle: true,

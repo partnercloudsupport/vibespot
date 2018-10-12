@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecc5af2a-c7e7-413a-a212-9afc9823a44d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Shape2x.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/images/no-data-image.png" afterPath="$PROJECT_DIR$/assets/images/no-data-image.png" />
-      <change beforePath="$PROJECT_DIR$/assets/images/shopping-cart (1)3x.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/lib/src/app.dart" afterPath="$PROJECT_DIR$/lib/src/app.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/src/screens/home_page.dart" afterPath="$PROJECT_DIR$/lib/src/screens/home_page.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/src/screens/login_page.dart" afterPath="$PROJECT_DIR$/lib/src/screens/login_page.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/src/screens/signup_home.dart" afterPath="$PROJECT_DIR$/lib/src/screens/signup_home.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/src/screens/signup_page1.dart" afterPath="$PROJECT_DIR$/lib/src/screens/signup_page1.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/src/screens/signup_page2.dart" afterPath="$PROJECT_DIR$/lib/src/screens/signup_page2.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/src/screens/signup_page3.dart" afterPath="$PROJECT_DIR$/lib/src/screens/signup_page3.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/src/screens/splash_page.dart" afterPath="$PROJECT_DIR$/lib/src/screens/splash_page.dart" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" afterPath="$PROJECT_DIR$/pubspec.lock" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" afterPath="$PROJECT_DIR$/pubspec.yaml" />
-      <change beforePath="$PROJECT_DIR$/vibespot.iml" afterPath="$PROJECT_DIR$/vibespot.iml" />
-      <change beforePath="$PROJECT_DIR$/vibespot_android.iml" afterPath="$PROJECT_DIR$/vibespot_android.iml" />
+      <change beforePath="$PROJECT_DIR$/lib/src/screens/notification_page.dart" afterPath="$PROJECT_DIR$/lib/src/screens/notification_page.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/src/screens/payment_page.dart" afterPath="$PROJECT_DIR$/lib/src/screens/payment_page.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,9 +119,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -155,7 +135,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,6 +308,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/src/screens/signup_page2.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/screens/signup_page2.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">

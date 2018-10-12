@@ -22,6 +22,9 @@ import "./screens/transfer_page.dart";
 import "./screens/help_page.dart";
 import "./screens/qr_page.dart";
 import "./screens/notification_page.dart";
+import "./screens/payment_page.dart";
+import "./screens/topup_page.dart";
+import "./screens/cardinfo_page.dart";
 
 
 class App extends StatelessWidget {
@@ -49,6 +52,9 @@ class App extends StatelessWidget {
        "/HelpPage": (BuildContext context) => new HelpPage(),
        "/QrPage": (BuildContext context) => new QrPage(),
        "/NotificationPage": (BuildContext context) => new NotificationPage(),
+       "/PaymentPage": (BuildContext context) => new PaymentPage(),
+       "/TopUpPage": (BuildContext context) => new TopUpPage(),
+       "/CardInformationPage": (BuildContext context) => new CardInformationPage(),
       };
 
 
@@ -64,8 +70,8 @@ class App extends StatelessWidget {
         ),
         //home: DrawerBar(),
         //home: TrackListingPage(),
-       //home: vibeMusicSplash(),
-        home: AddCard(),
+       home: vibeMusicSplash(),
+        // home: AddCard(),
         routes: routes,
     );
   }

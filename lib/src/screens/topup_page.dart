@@ -1,14 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class PaymentPage extends StatefulWidget {
+class TopUpPage extends StatefulWidget {
   // static String tag = 'transfer-page';
   @override
- PaymentPageState createState() => PaymentPageState();
+ TopUpPageState createState() => TopUpPageState();
 }
 
-class PaymentPageState extends State<PaymentPage> {
-
+class TopUpPageState extends State<TopUpPage> {
 
 
   startTime() async {
@@ -17,7 +16,7 @@ class PaymentPageState extends State<PaymentPage> {
   }
   
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed("/TopUpPage");
+    Navigator.of(context).pushReplacementNamed("/CardInformationPage");
   }
 
   @override
@@ -26,7 +25,7 @@ class PaymentPageState extends State<PaymentPage> {
     startTime();
   }
 
- final rechargeBar = AppBar(
+ final topUpBar = AppBar(
        centerTitle: true,
         leading: Icon(Icons.arrow_back, size: 30.0, color: Colors.orange.shade700),
         title: Text("Recharge", style: TextStyle(color:Colors.orange.shade700, 
@@ -49,10 +48,10 @@ class PaymentPageState extends State<PaymentPage> {
 
 
 
-   final paymentHead = new Padding(
+   final topUpHead = new Padding(
     padding: EdgeInsets.only(left: 5.0, right: 5.0),
     child: new Text(
-      "Select Payment Method",
+      "Top Up",
       style: new TextStyle(
         color: Colors.white,
         fontFamily: 'Poppins-Bold',
@@ -63,44 +62,16 @@ class PaymentPageState extends State<PaymentPage> {
   );
 
 
-  final creditCardField = TextField(
-      keyboardType: TextInputType.text,
-      autofocus: false,
-      decoration: InputDecoration(
-        hintText: 'Credit Card',
-        filled: true,
-        fillColor: Colors.white,
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(40.0),
-        ),
-      ),
-    );
 
 
+   
 
-    //  Widget creditCardField1 = DropdownButton(
-    //    items: listDrop,
-    //    onChanged: null,
-      
-    //   decoration: InputDecoration(
-    //     hintText: 'Credit Card',
-    //     filled: true,
-    //     fillColor: Colors.white,
-    //     contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-    //     border: OutlineInputBorder(
-    //       borderRadius: BorderRadius.circular(40.0),
-    //     ),
-    //   ),
-    // );
-
-
-     final bankField = TextField(
+     final amountField = TextField(
       keyboardType: TextInputType.text,
       autofocus: false,
       // initialValue: 'john@gmail.com',
       decoration: InputDecoration(
-        hintText: 'Bank Account',
+        hintText: 'Enter Amount',
         filled: true,
         fillColor: Colors.white,
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -142,19 +113,17 @@ class PaymentPageState extends State<PaymentPage> {
     //  loadData();
      return Scaffold(
       
-      appBar: rechargeBar,
+      appBar: topUpBar,
       backgroundColor: Colors.black,
       body: Center(
         child: ListView(
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
               SizedBox(height: 50.0),
-              paymentHead,
+             topUpHead,
               SizedBox(height: 30.0),
-              creditCardField,
-              SizedBox(height: 15.0),
-              bankField,
-              SizedBox(height: 30.0),
+              amountField,
+              SizedBox(height: 40.0),
               proceedButton
           
             
