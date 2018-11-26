@@ -5,8 +5,18 @@ buildscript {
     }
 
     dependencies {
+        //Google auth
         classpath 'com.android.tools.build:gradle:3.0.1'
-    }
+        classpath 'com.google.gms:google-services:4.2.0'
+
+
+        // C:\Users\AZEEZ\IdeaProjects\vibespotcodebase\vibespot_client
+        // \android\gradle\wrapper\gradle-wrapper.properties to gradle-4.4-all.zip
+
+        // Firebase/flutter Auth
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.google.gms:google-services:3.2.1'
+            }
 }
 
 allprojects {

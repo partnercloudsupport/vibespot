@@ -26,7 +26,7 @@ class CardInformationPageState extends State<CardInformationPage> {
   //   startTime();
   // }
 
- final cardInfoBar = AppBar(
+final cardInfoBar = AppBar(
        centerTitle: true,
         leading: Icon(Icons.arrow_back, size: 30.0, color: Colors.orange.shade700),
         title: Text("Add Card", style: TextStyle(color:Colors.orange.shade700, 
@@ -48,8 +48,7 @@ class CardInformationPageState extends State<CardInformationPage> {
       ); 
 
 
-
-   final cardHead = new Padding(
+final cardHead = new Padding(
     padding: EdgeInsets.only(left: 5.0, right: 5.0),
     child: new Text(
       "Enter Card Information",
@@ -63,7 +62,7 @@ class CardInformationPageState extends State<CardInformationPage> {
   );
 
 
-  final cardNumberField = TextField(
+final cardNumberField = TextField(
       keyboardType: TextInputType.text,
       autofocus: false,
       decoration: InputDecoration(
@@ -79,7 +78,7 @@ class CardInformationPageState extends State<CardInformationPage> {
 
 
 
-     final expireField = TextField(
+final expireField = TextField(
       keyboardType: TextInputType.datetime,
       autofocus: false,
       // initialValue: 'john@gmail.com',
@@ -94,7 +93,7 @@ class CardInformationPageState extends State<CardInformationPage> {
       ),
     );
 
-    final cvvField = TextField(
+   final cvvField = TextField(
       keyboardType: TextInputType.number,
       autofocus: false,
       // initialValue: 'john@gmail.com',

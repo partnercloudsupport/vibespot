@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "323040481637",
+    "firebase_url": "https://vibeartist-5c612.firebaseio.com",
+    "project_id": "vibeartist-5c612",
+    "storage_bucket": "vibeartist-5c612.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323040481637:android:b494324c12df0a41",
+        "android_client_info": {
+          "package_name": "com.example.vibespot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323040481637-848iius1s30kq1i40771n4518nen7oe5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vibespot",
+            "certificate_hash": "27c95b5c6bc9ac61de825394503b123d252103ae"
+          }
+        },
+        {
+          "client_id": "323040481637-0pcbjrn6oa6k8k6nsko7b4pvsi8l5rrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVV97KrH36W4yaw3dqAeBe72JMSh2r-Ik"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323040481637-0pcbjrn6oa6k8k6nsko7b4pvsi8l5rrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
