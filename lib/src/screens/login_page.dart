@@ -1,81 +1,78 @@
-import 'dart:async';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import '../mixins/validation_mixin.dart';
 
 class LogInPage extends StatefulWidget {
-  // static String tag = 'login-page';
-  @override
- LogInPageState createState() => LogInPageState();
+  createState() {
+    return LogInPageState();
+  }
 }
 
-class LogInPageState extends State<LogInPage> {
+class LogInPageState extends State<LogInPage> with ValidationMixin {
+  final formKey = GlobalKey<FormState>();
 
-  // startTime() async {
-  //   var duration = new Duration(seconds: 5);
-  //   return new Timer(duration, navigationPage);
-  // }
-  
-  // void navigationPage() {
-  //   Navigator.of(context).pushReplacementNamed("/signUpHome");
-  // }
+  String email = '';
+  String password = '';
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // startTime();
-  // }
-
- final TextEditingController _emailController = new TextEditingController();
- final TextEditingController _passwordController = new TextEditingController();
- String _dashboard = " ";
-
-
- void _showDashboard(){
-   setState((){
-     if (_emailController.text.isNotEmpty && _passwordController.text.isNotEmpty){
-
-        _dashboard = _emailController.text;
-     }
-     else {
-
-            _dashboard = "Nothing";
-     }
-
-   });
- }
-    
+  final TextEditingController _emailController = new TextEditingController();
+  final TextEditingController _passwordController = new TextEditingController();
+  String _welcomeString = " ";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: signInBar,
       appBar: AppBar(
         centerTitle: true,
         // leading: Icon(Icons.arrow_back, color: Colors.orange.shade700),
-        leading:  IconButton(
-                  icon: new Icon(Icons.arrow_back, color: Colors.orange.shade700),
-                        onPressed: () { 
-                          
-                          Navigator.pop(context);
-                        
-                           },
-                    ),
-        title: Text("Sign In", style: TextStyle(color:Colors.orange.shade700)),
+        leading: IconButton(
+          icon: new Icon(Icons.arrow_back, color: Colors.orange.shade700),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text("Sign In", style: TextStyle(color: Colors.orange.shade700)),
         backgroundColor: Colors.black,
       ),
-
-
       backgroundColor: Colors.black,
-      body: Center(
-        child: ListView(
+
+      // margin: EdgeInsets.all(20.0),
+
+       body: Center(
+         child: Form(
+           key: formKey,
+           child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
-              SizedBox(height: 30.0),
+            SizedBox(height: 15.0),
+            welcome(),
+            SizedBox(height: 15.0),
+            emailField(),
+            SizedBox(height: 15.0),
+            passwordField(),
+            // Container(margin: EdgeInsets.only(top: 25.0)),
+            SizedBox(height: 10.0),
+            submitButton(),
+            SizedBox(height: 10.0),
+            forgetPassword(),
+            SizedBox(height: 10.0),
+            or(),
+            SizedBox(height: 10.0),
+            facebookLogin(),
+            SizedBox(height: 10.0),
+            gmailLogin(),
 
-              new Center(
+          ]
+        ),
+
+        ),
+        
+      ),
+    );
+  }
+
+
+  Widget welcome(){
+    return Center(
                   child: new Text("Welcome Back",
                   style: new TextStyle(
                     color: Colors.orange.shade700,
@@ -84,133 +81,137 @@ class LogInPageState extends State<LogInPage> {
                   ),
                   textAlign: TextAlign.center,
                   ),   
-                ),   
-              SizedBox(height: 40.0),
+                );
+  }
 
-              new TextField(
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    autofocus: false,
-                    
-                    // initialValue: 'john@gmail.com',
-                    decoration: InputDecoration(
-                      hintText: 'Email',
-                      filled: true,
-                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32.0),
-                      ),
-                    ),
-                  ),
-              SizedBox(height: 15.0),
+  Widget emailField() {
+    return TextFormField(
+      controller: _emailController,
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecoration(
+        hintText: 'you@example.com',
+        filled: true,
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        fillColor: Colors.white,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32.0),
+        ),
+      ),
+      validator: validateEmail,
+      onSaved: (String value) {
+        email = value;
+      },
+    );
+  }
 
-             
-              new TextField(
-                  // keyboardType: TextInputType.emailAddress,
-                  controller: _passwordController,
-                  autofocus: false,
-                  // initialValue: 'john@gmail.com',
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'Password',
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                    fillColor: Colors.white,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(32.0),
-                    ),
-                  ),
-                ), 
-              SizedBox(height: 15.0),
+  Widget passwordField() {
+    return TextFormField(
+      controller: _passwordController,
+      obscureText: true,
+      decoration: InputDecoration(
+        hintText: 'Password',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        fillColor: Colors.white,
+        filled: true,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32.0),
+        ),
+      ),
+      validator: validatePassword,
+      onSaved: (String value) {
+        password = value;
+      },
+    );
+  }
 
-             new Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 16.0),
-                      child: Material(
-                        borderRadius: BorderRadius.circular(80.0),
-                        // shadowColor: Colors.orange.shade200,
-                        // elevation: 5.0,
-                        child: MaterialButton(
-                            minWidth: 200.0,
-                            height: 60.0,
-                            onPressed: _showDashboard,
-                            color: Colors.orange.shade700,
-                            child: Text(
-                              "Login In", 
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20.0,
-                                ),
-                            ),
-                        ),
-                      ),
-                  ), 
-              SizedBox(height: 15.0),
-
-              new FlatButton(
-                child: Text('Forget password?', style: TextStyle(color:Colors.white),
-                ),
-                onPressed: (){
-
-                },
-              ),
-              SizedBox(height: 15.0),
-
-              new Center(
-                    child: new Text("Or",
-                    style: new TextStyle(
-                      color: Colors.orange.shade700,
-                      fontFamily: 'Poppins-Bold',
-                      fontSize: 20.0,
-                    ),
-                    textAlign: TextAlign.center,
-                    ),   
-                  ),   
-              SizedBox(height: 15.0),
-
-             new GestureDetector(
-                            onTap: (){
-                              setState(() {
-                                  // _url = getNewCatUrl();
-                                  
-                                  Navigator.of(context).pushNamed('/LogInPage');
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) => LogInPage()),
-                                  // );
-                                    });
-                            },
-                            child: CircleAvatar(
-                              backgroundColor: Colors.transparent,
-                              radius: 42.0,
-                              child: Image.asset('assets/images/facebook-btn.png'),
-                          ),
-                        ),
-              SizedBox(height: 10.0),
-
-         
-             new GestureDetector(
-                            onTap: (){
-                              setState(() {
-                                  // _url = getNewCatUrl();
-                                  
-                                  Navigator.of(context).pushNamed('/LogInPage');
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) => LogInPage()),
-                                  // );
-                                    });
-                            },
-                            child: CircleAvatar(
-                              backgroundColor: Colors.transparent,
-                              radius: 42.0,
-                              child: Image.asset('assets/images/google-btn.png'),
-                          ),
-                        ),
-          ]
+  Widget submitButton() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: Material(
+        borderRadius: BorderRadius.circular(80.0),
+        child: MaterialButton(
+          minWidth: 200.0,
+          height: 60.0,
+          onPressed: () {
+            if (formKey.currentState.validate()) {
+              formKey.currentState.save();
+              print('Time to post $email and $password to my API');
+            }
+          },
+          color: Colors.orange.shade700,
+          child: Text(
+            "Login In",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20.0,
+            ),
+          ),
         ),
       ),
     );
   }
+
+  Widget forgetPassword() {
+    return FlatButton(
+      child: Text(
+        'Forget password?',
+        style: TextStyle(color: Colors.white),
+      ),
+      onPressed: () {},
+    );
+  }
+
+  Widget or() {
+    return Center(
+      child: new Text(
+        "Or",
+        style: new TextStyle(
+          color: Colors.orange.shade700,
+          fontFamily: 'Poppins-Bold',
+          fontSize: 20.0,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+
+  Widget facebookLogin() {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          
+          Navigator.of(context).pushNamed('/LogInPage');
+        
+        });
+      },
+      child: CircleAvatar(
+        backgroundColor: Colors.transparent,
+        radius: 42.0,
+        child: Image.asset('assets/images/facebook-btn.png'),
+      ),
+    );
+  }
+
+  Widget gmailLogin() {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          // _url = getNewCatUrl();
+
+          Navigator.of(context).pushNamed('/LogInPage');
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => LogInPage()),
+          // );
+        });
+      },
+      child: CircleAvatar(
+        backgroundColor: Colors.transparent,
+        radius: 42.0,
+        child: Image.asset('assets/images/google-btn.png'),
+      ),
+    );
+  }
+
+
 }
