@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+  draggable_scrollbar:
+    dependency: transitive
+    description:
+      name: draggable_scrollbar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   firebase_auth:
     dependency: "direct main"
     description:
@@ -73,7 +80,7 @@ packages:
       name: groovin_material_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.1.5"
   http:
     dependency: "direct main"
     description:
@@ -176,7 +183,7 @@ packages:
       name: synchronized
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.1+1"
+    version: "1.5.3"
   term_glyph:
     dependency: transitive
     description:
@@ -198,6 +205,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.6"
+  url_launcher:
+    dependency: transitive
+    description:
+      name: url_launcher
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.2"
   vector_math:
     dependency: transitive
     description:
@@ -207,4 +221,4 @@ packages:
     version: "2.0.8"
 sdks:
   dart: ">=2.0.0 <3.0.0"
-  flutter: ">=0.5.0 <2.0.0"
+  flutter: ">=0.5.6 <2.0.0"

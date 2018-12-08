@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 // import "./screens/vibemusic.dart";
-import "./screens/splash_page.dart";
+import "package:vibespot/src/screens/splash_page.dart";
 // import "./screens/home_page.dart";
 // import "./screens/login_page.dart";
 // import "./screens/signup_home.dart";
 // import "./screens/signup_page1.dart";
 // import "./screens/signup_page2.dart";
 // import "./screens/signup_page3.dart";
-import "./routes/routes.dart";
+import "package:vibespot/src/routes/routes.dart";
 // import "./screens/music_page.dart";
 // import "./screens/song_music2_page.dart";
 // import "./screens/instruction_page.dart";

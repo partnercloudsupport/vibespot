@@ -1,3 +1,4 @@
+
 class Co {
 static const KEY = 'key';
 static const SAVE = 'Save';
@@ -62,7 +63,7 @@ return s. startsWith(Co.ES_LISTA_REGISTROS);
 }
 
 class Result {
-Result(this.status, {this.object = null, this.message = "});
+Result(this.state, {this.object = null, this.message ='' });
 
 int state;
 Object object;
@@ -71,12 +72,12 @@ String message;
 
 // Variables for Widgets
 class Vidget {
-Vidget({this.message = ", this.title = 'Widget'});
+Vidget({this.message = '', this.title = 'Widget'});
 
 String message;
 String title;
 }
 
 String campoObligatorio(String field) {
-return " The field $field is required.';
+return " The field $field is required.";
 }

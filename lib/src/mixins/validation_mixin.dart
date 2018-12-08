@@ -15,17 +15,17 @@ class ValidationMixin {
     return null;
   }
 
-  String validateFirstname(String value) {
+  String validateArtistName(String value) {
     if (value.isEmpty) {
-      return 'Please enter your firstname';
+      return 'Please enter your Artist name';
     }
 
     return null;
   }
 
-  String validateLastname(String value) {
+  String validateManagerName(String value) {
     if (value.isEmpty) {
-      return 'Please enter your last name';
+      return 'Please enter your Record name';
     }
 
     return null;

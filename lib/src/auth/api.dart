@@ -1,11 +1,10 @@
-
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'constants.dart';
 
 
-class Api {
+class ApiVibespot {
   static HttpConfConnection hcc = new HttpConfConnection();
 
   static Api api = Api(hcc); // public access variable for all API comunications;
@@ -26,7 +25,10 @@ class HttpConfConnection {
 
   // IMPORTANT: NEVER EVER USE 127.0.0.1 NOR localhost as this.host
   // Because either are different from Server and Device
-  HttpConfConnection({this.scheme = 'http', this.host = '192.168.1.53', this.port = 8099});
+  HttpConfConnection({
+    this.scheme = 'http', 
+    this.host = '167.99.110.73', 
+    this.port = 80});
 
   String scheme;
   String host;
@@ -34,6 +36,9 @@ class HttpConfConnection {
 //  String _jtwAuthHeaderPrefix = JTW_AUTH_HEADER_PREFIXS[1];
 
 }
+
+
+
 
 class Api {
   Api(this.hcc);
@@ -146,12 +151,12 @@ print(_user.toString());
             ' ' +
             await _response.transform(utf8.decoder).join('');
       }
-      _result.estado = _response.statusCode;
-      _result.mensaje = _response.reasonPhrase;
-      _result.objeto = _body;
+      _result.state = _response.statusCode;
+      _result.message = _response.reasonPhrase;
+      _result.object = _body;
     } catch (e) {
       // Catch for Exception
-      _result.mensaje = '$e';
+      _result.message = '$e';
     }
 
     return _result;
@@ -200,12 +205,12 @@ print(_response.headers.toString());
             ' ' +
             await _response.transform(utf8.decoder).join('');
       }
-      _result.estado = _response.statusCode;
-      _result.mensaje = _response.reasonPhrase;
-      _result.objeto = _body;
+      _result.state = _response.statusCode;
+      _result.message = _response.reasonPhrase;
+      _result.object = _body;
     } catch (e) {
       // Catch for Exception
-      _result.mensaje = '$e';
+      _result.message = '$e';
     }
 
     return _result;
@@ -285,12 +290,12 @@ print('Body Response on $method: $_body');
             ': ' +
             await _response.transform(utf8.decoder).join('');
       }
-      _result.estado = _response.statusCode;
-      _result.mensaje = _response.reasonPhrase;
-      _result.objeto = _body;
+      _result.state = _response.statusCode;
+      _result.message = _response.reasonPhrase;
+      _result.object = _body;
     } catch (e) {
       // Catch for Exception
-      _result.mensaje = '$e';
+      _result.message = '$e';
     }
 
     return _result;
@@ -332,12 +337,12 @@ print('Body Response on $method: $_body');
             ': ' +
             await _response.transform(utf8.decoder).join('');
       }
-      _result.estado = _response.statusCode;
-      _result.mensaje = _response.reasonPhrase;
-      _result.objeto = _body;
+      _result.state = _response.statusCode;
+      _result.message = _response.reasonPhrase;
+      _result.object = _body;
     } catch (e) {
       // Catch for Exception
-      _result.mensaje = '$e';
+      _result.message = '$e';
     }
 
     return _result;

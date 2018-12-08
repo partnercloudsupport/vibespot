@@ -79,7 +79,7 @@ class SignUpHomeState extends State<SignUpHome> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          Navigator.of(context).pushNamed('/LogInPage');
+          // Navigator.of(context).pushNamed('/LogInPage');
         });
       },
       child: CircleAvatar(
@@ -95,7 +95,7 @@ class SignUpHomeState extends State<SignUpHome> {
       onTap: () {
         setState(() {
       
-          Navigator.of(context).pushNamed('/LogInPage');
+          // Navigator.of(context).pushNamed('/LogInPage');
           // Navigator.push(
           //   context,
           //   MaterialPageRoute(builder: (context) => LogInPage()),
@@ -115,7 +115,7 @@ class SignUpHomeState extends State<SignUpHome> {
       onTap: () {
         setState(() {
 
-          Navigator.of(context).pushNamed('/SignUpPage1');
+          Navigator.of(context).pushNamed('/SignUpOption');
         });
       },
       child: CircleAvatar(

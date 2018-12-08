@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../mixins/validation_mixin.dart';
+import 'package:vibespot/src/mixins/validation_mixin.dart';
+// import '../mixins/validation_mixin.dart';
 
 class LogInPage extends StatefulWidget {
   createState() {
@@ -124,32 +125,67 @@ class LogInPageState extends State<LogInPage> with ValidationMixin {
     );
   }
 
-  Widget submitButton() {
+
+   Widget submitButton() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(80.0),
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 60.0,
-          onPressed: () {
+      padding: EdgeInsets.symmetric(vertical: 20.0),
+      child: SizedBox(
+        width: 200.0,
+        height: 60.0,
+        child: OutlineButton(
+          child: Text(
+            "Login In ",
+            style: TextStyle(
+              color: Colors.orange,
+              fontSize: 23.0,
+            ),
+          ),
+          // color: Colors.orange.shade700,
+      
+          onPressed: () async {
             if (formKey.currentState.validate()) {
               formKey.currentState.save();
               print('Time to post $email and $password to my API');
             }
+
+            // setState(() {
+            //   Navigator.of(context).pushNamed('/SignUpArtistPage');
+            // });
           },
-          color: Colors.orange.shade700,
-          child: Text(
-            "Login In",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-            ),
-          ),
+          shape: new RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(30.0)),
         ),
       ),
     );
   }
+
+
+  // Widget submitButton() {
+  //   return Padding(
+  //     padding: EdgeInsets.symmetric(vertical: 16.0),
+  //     child: Material(
+  //       borderRadius: BorderRadius.circular(80.0),
+  //       child: MaterialButton(
+  //         minWidth: 200.0,
+  //         height: 60.0,
+  //         onPressed: () {
+  //           if (formKey.currentState.validate()) {
+  //             formKey.currentState.save();
+  //             print('Time to post $email and $password to my API');
+  //           }
+  //         },
+  //         color: Colors.orange.shade700,
+  //         child: Text(
+  //           "Login In",
+  //           style: TextStyle(
+  //             color: Colors.white,
+  //             fontSize: 20.0,
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   Widget forgetPassword() {
     return FlatButton(
